@@ -13,7 +13,7 @@ public class OrderMaker {
 
     public String orderPizza() throws InterruptedException {
         webDriverUtil.openPage(Locators.URL);
-        //Thread.sleep(5000);
+        Thread.sleep(5000);
         webDriverUtil.clickButtonWithWait(Locators.SALE_ALERT_CLOSE);
         webDriverUtil.clickButtonWithWait(Locators.PIZZA_CATEGORY);
         Thread.sleep(5000);
