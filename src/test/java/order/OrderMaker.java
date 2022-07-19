@@ -12,34 +12,28 @@ public class OrderMaker {
     }
 
     public String orderPizza() throws InterruptedException {
-
         webDriverUtil.openPage(Locators.URL);
         //Thread.sleep(5000);
-        webDriverUtil.clickButton(Locators.SALE_ALERT_CLOSE);
-        //Thread.sleep(1000);
-        webDriverUtil.clickButton(Locators.PIZZA_CATEGORY);
-        //Thread.sleep(1000);
-        webDriverUtil.clickButton(Locators.PIZZA_MARGARITA);
-        //Thread.sleep(1000);
-        webDriverUtil.clickButton(Locators.CART);
-        //Thread.sleep(1000);
+        webDriverUtil.clickButtonWithWait(Locators.SALE_ALERT_CLOSE);
+        webDriverUtil.clickButtonWithWait(Locators.PIZZA_CATEGORY);
+        Thread.sleep(5000);
+        webDriverUtil.clickButtonWithWait(Locators.PIZZA_MARGARITA);
+        webDriverUtil.clickButtonWithWait(Locators.CART);
         String text = webDriverUtil.getText(Locators.MARGARITA_IN_CART);
-        //Thread.sleep(3000);
         closePage();
         return text;
     }
 
     public void orderPizzaAndDrink() throws InterruptedException {
         webDriverUtil.openPage(Locators.URL);
-        //Thread.sleep(5000);
+        Thread.sleep(3000);
         webDriverUtil.clickButtonWithWait(Locators.SALE_ALERT_CLOSE);
         webDriverUtil.clickButton(Locators.PIZZA_CATEGORY);
-        webDriverUtil.clickButton(Locators.PIZZA_MARGARITA);
-        webDriverUtil.clickButton(Locators.DRINK_CATEGORY);
-        webDriverUtil.clickButton(Locators.DRINK_PEPSI);
+        Thread.sleep(2000);
+        webDriverUtil.clickButtonWithWait(Locators.PIZZA_MARGARITA);
+        webDriverUtil.clickButtonWithWait(Locators.DRINK_CATEGORY);
+        webDriverUtil.clickButtonWithWait(Locators.DRINK_PEPSI);
         webDriverUtil.clickButtonWithWait(Locators.CART);
-
-
     }
 
     public String checkPizza() {

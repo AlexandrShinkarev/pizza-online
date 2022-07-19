@@ -37,7 +37,7 @@ public class WebDriverUtil {
     }
 
     public WebElement findElementWithWait(String locator) {
-        return new WebDriverWait(driver, Duration.ofSeconds(6)).until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+        return new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
     }
 
     public void clickButton(String locator) {
